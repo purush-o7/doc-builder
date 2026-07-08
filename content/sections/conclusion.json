@@ -1,0 +1,119 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "VI. DISCUSSION",
+    "align": "center"
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The evaluation results provide strong evidence for KovilAR’s effectiveness as an educational tool for cultural heritage. The overall satisfaction score of 4.53/5.00 compares favorably with similar MR heritage applications: Teruggi and Fassi [5] reported positive qualitative feedback but did not conduct quantitative user studies for their Milan Cathedral HoloLens application, while Bozzelli et al. [4] achieved comparable usability scores in their VR/AR cultural heritage framework. The unanimous 100% revisit intention observed in our study is particularly noteworthy and exceeds the engagement rates typically reported in XR heritage literature [21].",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The statistically significant difference across metrics revealed by the Friedman test (χ² = 53.94, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " < 0.001) provides a nuanced view of the user experience. The relatively lower Interface Usability score (M = 4.18) compared to content-related metrics such as Architecture Learning (M = 4.59) and Visual Appeal (M = 4.61) suggests that while the educational content and visual design are well-received, the interaction paradigm presents an initial barrier. This pattern is consistent with the broader HoloLens 2 literature, where gesture-based interaction consistently emerges as the primary usability challenge [5]. Importantly, the high Architecture Learning score (M = 4.59, 95.9% positive) validates the four-phase learn-then-test pedagogical design, confirming that the structured progression from orientation through exploration to gamified assessment supports effective knowledge transfer about temple architectural elements."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The gender-based analysis revealed a significant usability gap ("
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " = 0.012) that merits attention in future iterations. While this did not extend to other dimensions—indicating that the core learning and immersive experience transcends gender differences—it underscores the need for more inclusive onboarding strategies. The high Recommendation Intent (M = 4.67) and Revisit Intention (M = 4.82) together suggest strong potential for deploying MR heritage applications at Indian temple sites and museums, where they could serve as supplementary educational tools alongside traditional guided tours and information panels."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "figure",
+    "path": "media/rId20.jpg",
+    "width": 3.26,
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 14. ",
+        "bold": true
+      },
+      {
+        "text": "KovilAR holographic 3D reconstructions of the complete Moovar Kovil three-shrine complex as viewed through HoloLens 2, depicting all three original Chola-era shrines — including the digitally restored third shrine absent from the surviving physical site shown in Fig. 1."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "This paper presented KovilAR, a Mixed Reality application on Microsoft HoloLens 2 for interactive learning of ancient Hindu temple architecture. Designed for Moovar Kovil—a 9th-century Chola-era Dravidian temple in Kodumbalur, Tamil Nadu—the application employs a four-phase learn-then-test pedagogical approach: Reader Tab orientation, holistic temple exploration with constrained manipulation, detailed component inspection with spatial audio narrations, and a gamified 3D jigsaw puzzle assessment.",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "A user study with 49 participants yielded an overall satisfaction score of 4.53/5.00, with 94.8% positive responses across all metrics and 100% revisit intention. Statistical analysis confirmed the instrument’s reliability (α = 0.815) and revealed significant differences across evaluation dimensions (χ² = 53.94, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " < 0.001), with Architecture Learning (4.59) and Visual Appeal (4.61) scoring highest among content-related metrics. A significant gender-based usability gap ("
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " = 0.012) identified the need for more inclusive onboarding strategies, while inter-metric correlations confirmed that immersion, learning, and recommendation intent form a mutually reinforcing cycle."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Future work will extend the framework to additional Chola-period temples such as Brihadeeswarar at Thanjavur and Gangaikonda Cholapuram, implement multi-user collaborative exploration, develop a mobile AR version for broader accessibility, and conduct longitudinal studies on knowledge retention.",
+    "align": "both"
+  }
+]

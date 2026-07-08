@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "input": "../../KovilAR_IEEE_Paper_v9.docx",
+    "output": "../output/KovilAR_IEEE_Paper_v23.docx"
+  },
+  "defaults": {
+    "font_name":         "Times New Roman",
+    "font_size":         null,
+    "body_align":        "justify",
+    "table_font_size":   8,
+    "table_header_bold": true,
+    "table_borders":     true,
+    "figure_width":      3.4,
+    "figure_align":      "center",
+    "caption_align":     "center"
+  },
+  "operations": [
+    {
+      "op": "rebuild_doc",
+      "sections": [
+        "sections/header.json",
+        "sections/introduction.json",
+        "sections/related_work.json",
+        "sections/kovil_ar_design_and_implementation.json",
+        "sections/kovilar_design.json",
+        "sections/evaluation.json",
+        "sections/conclusion.json",
+        "sections/references.json"
+      ]
+    }
+  ]
+}

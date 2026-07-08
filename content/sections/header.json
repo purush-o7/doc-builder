@@ -1,0 +1,254 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "KovilAR: A Mixed Reality Application for Interactive Learning and Gamified Exploration of Ancient Hindu Temple Architecture",
+    "align": "center",
+    "font_size": 24.0,
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "authors_table",
+    "authors": [
+      {
+        "lines": [
+          "Purushottam Reddy Chinthakuntla",
+          "Dept. of Computer Science and Engineering",
+          "Amrita School of Computing, Amrita Vishwa Vidyapeetham",
+          "Amritapuri, India",
+          "purush3190@gmail.com"
+        ],
+        "runs": [
+          [
+            {
+              "text": "Purushottam Reddy Chinthakuntla",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Dept. of Computer Science and Engineering",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "Amrita School of Computing, Amrita Vishwa Vidyapeetham",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "Amritapuri, India",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "purush3190@gmail.com",
+              "font_size": 9.0
+            }
+          ]
+        ]
+      },
+      {
+        "lines": [
+          "Uma Gopalakrishnan",
+          "Center for Wireless Networks & Applications (WNA)",
+          "Amrita Vishwa Vidyapeetham",
+          "Amritapuri, India",
+          "umag@am.amrita.edu"
+        ],
+        "runs": [
+          [
+            {
+              "text": "Uma Gopalakrishnan",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Center for Wireless Networks & Applications (WNA)",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "Amrita Vishwa Vidyapeetham",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "Amritapuri, India",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "umag@am.amrita.edu",
+              "font_size": 9.0
+            }
+          ]
+        ]
+      },
+      {
+        "lines": [
+          "Ramkumar N",
+          "Advanced Micro Devices, Inc.",
+          "California, USA",
+          "ramnaray@amd.com"
+        ],
+        "runs": [
+          [
+            {
+              "text": "Ramkumar N",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Advanced Micro Devices, Inc.",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "California, USA",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "ramnaray@amd.com",
+              "font_size": 9.0
+            }
+          ]
+        ]
+      },
+      {
+        "lines": [
+          "Balaji Hariharan",
+          "Center for Wireless Networks & Applications (WNA)",
+          "Amrita Vishwa Vidyapeetham",
+          "Amritapuri, India",
+          "balajih@am.amrita.edu"
+        ],
+        "runs": [
+          [
+            {
+              "text": "Balaji Hariharan",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Center for Wireless Networks & Applications (WNA)",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "Amrita Vishwa Vidyapeetham",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "Amritapuri, India",
+              "italic": true,
+              "font_size": 9.0
+            }
+          ],
+          [
+            {
+              "text": "balajih@am.amrita.edu",
+              "font_size": 9.0
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "spacer",
+    "align": "both",
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Abstract",
+        "bold": true,
+        "italic": true,
+        "font_size": 9.0
+      },
+      {
+        "text": "—India’s ancient Hindu temples represent extraordinary achievements in architecture, engineering, and spiritual symbolism. This paper presents KovilAR, a Mixed Reality (MR) application developed using Microsoft HoloLens 2 that serves as an interactive learning tool for understanding ancient Hindu temple architecture. Developed for Moovar Kovil, a 9th-century Chola-era Dravidian temple complex in Kodumbalur, Tamil Nadu, the application employs a structured four-phase pedagogical approach: users progress through orientation via a Reader Tab, holistic temple exploration with constrained axis manipulation, detailed component inspection of architectural elements (Pada, Gopuram, Adhisthana, Vimana) with contextual tooltips and spatial audio narrations, and finally validate their understanding through a gamified 3D jigsaw puzzle reconstruction challenge. Built on Unity 2020.3 LTS with the Mixed Reality Toolkit (MRTK 3.0), the application leverages hand tracking, gaze input. A user study with 49 participants demonstrated excellent results with an overall satisfaction score of 4.53/5.00 and 100% revisit intention, confirming KovilAR’s effectiveness as an educational tool for cultural heritage preservation.",
+        "italic": true,
+        "font_size": 9.0
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Index Terms—",
+        "bold": true,
+        "italic": true,
+        "font_size": 9.0
+      },
+      {
+        "text": "Cultural heritage, Temple architecture, Chola dynasty, Mixed Reality, HoloLens 2, Interactive learning, Gamification, MRTK, Dravidian architecture",
+        "italic": true,
+        "font_size": 9.0
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    },
+    "section_break": {
+      "pg_sz": {
+        "w": "11906",
+        "h": "16838",
+        "orient": "portrait"
+      },
+      "pg_mar": {
+        "top": 540,
+        "bottom": 1440,
+        "left": 893,
+        "right": 893,
+        "header": 708,
+        "footer": 708
+      },
+      "pg_num_start": 1
+    }
+  }
+]

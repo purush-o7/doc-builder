@@ -1,0 +1,173 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "I. INTRODUCTION",
+    "align": "center",
+    "fmt": {
+      "space_before": 12.0,
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "India’s majestic ancient temples are steeped in historical significance and metaphysical symbolism. They embody the principles of Shilpa Shastra—the ancient Sanskrit texts providing comprehensive guidelines for temple construction, sculpture, and iconography. Between the 4th and 13th centuries CE, the Gupta and Chola eras witnessed a sophisticated maturation of temple architecture as it branched into various iconic styles [1].",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Despite their importance, understanding the complex architectural principles underlying these structures remains a challenge for students and enthusiasts of Indian art. Traditional learning methods—such as textbooks, photographs, and videos—often fail to convey the three-dimensional spatial relationships and intricate structural details that define these monuments. For a student, concepts such as layout symmetry, elevation, sculptural placement, and symbolic geometry can be difficult to fully grasp through 2D media alone.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "figure",
+    "path": "media/rId7.jpg",
+    "width": 2.812,
+    "align": "center",
+    "fmt": {
+      "space_after": 10.0,
+      "line_spacing": 276,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 1. ",
+        "bold": true
+      },
+      {
+        "text": "Aerial view of Moovar Kovil, Kodumbalur (9th century CE), showing the two surviving Chola-era shrines of the original three-shrine complex."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Furthermore, many ancient temples suffer from varying degrees of structural decay and are protected as heritage sites. Digital restoration offers a robust methodology for safeguarding this legacy, enabling the creation of high-fidelity 3D models that reconstruct missing or damaged components. When integrated with Mixed Reality (MR), these models provide a spatially aware, immersive environment where learners can navigate a reconstructed site. Users can explore temple structures in three dimensions, observe architectural components from multiple perspectives, and engage with intricate craftsmanship intuitively. Such an approach transforms the study of temple architecture from passive observation into an active, engaging learning experience. While virtual and augmented reality have been increasingly deployed at global heritage sites [8], the application of MR specifically to the Indian temple tradition—one of the richest and most complex in the world—remains largely unexplored.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "This paper discusses the development of “KovilAR,” a Mixed Reality application created for Moovar Kovil (meaning “The Three Temples”), a 9th-century Hindu temple complex in Kodumbalur, Tamil Nadu. Representing the early Dravidian style of the Chola era (9th–12th centuries CE), the complex holds great historical significance as one of the earliest surviving examples of Chola stone construction. Built by the Irukkuvel chieftain Boothi Vikramakesari, a contemporary of King Aditya I (870–907 CE), Moovar Kovil is one of four extant temples that bridge the architectural transition from the Pallava style to the mature Chola style. Its partially ruined state makes it an ideal candidate for digital reconstruction.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "We present KovilAR as an exploratory learning tool developed for the Microsoft HoloLens 2. Using Moovar Kovil as a case study, the application implements a structured \"learn-then-test\" pedagogical approach through a four-phase interactive experience:",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Reader Tab",
+        "bold": true
+      },
+      {
+        "text": ": A draggable navigation guide introducing architectural vocabulary (such as Adhisthana, Bhitti, Vimana, and Devakoshta) and serving as an interactive index."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Temple Exploration:",
+        "bold": true
+      },
+      {
+        "text": " A complete digital reconstruction featuring hand gesture based intuitive interaction with the temple structure  and voice narrations describing each architectural level."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Component Exploration",
+        "bold": true
+      },
+      {
+        "text": ": Individual elements (such as the Pada, Gopuram, Adhisthana, and Vimana) displayed separately with gaze-triggered floating tooltips and gesture-triggered dedicated audio narrations."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Jigsaw Puzzle",
+        "bold": true
+      },
+      {
+        "text": ": A 3D spatial puzzle where scattered temple pieces must be correctly positioned using hand gestures. The system utilizes Vector3 distance and Quaternion tolerance matching. Upon completion, the temple transforms with a golden shader to reveal a Shiv Linga."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  }
+]

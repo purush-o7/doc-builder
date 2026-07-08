@@ -1,0 +1,503 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": ". REFERENCES",
+    "align": "center",
+    "fmt": {
+      "space_before": 12.0,
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[1] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "L. C. Orr, \"Cholas, Pandyas, and 'Imperial Temple Culture' in Medieval Tamilnadu,\" The Temple in South Asia, vol. 2, pp. 83–104, 2007.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[2] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "C. Innocente et al., \"A framework study on the use of immersive XR technologies in the cultural heritage domain,\" J. Cultural Heritage, vol. 62, pp. 268–283, 2023.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[3] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "A. Bec et al., \"Virtual reality and mixed reality for second chance tourism,\" Tourism Management, vol. 83, p. 104256, 2021.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[4] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "G. Bozzelli et al., \"An integrated VR/AR framework for user-centric interactive experience of cultural heritage,\" Digital Applications in Archaeology, vol. 15, p. e00124, 2019.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[5] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "S. Teruggi and F. Fassi, \"HoloLens 2 spatial mapping capabilities in vast monumental heritage environments,\" Int. Arch. Photogrammetry, vol. XLVI-2/W1-2022, pp. 489–496, 2022.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[6] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "U. Gopalakrishnan et al., \"Parametric evaluation of progressively immersive multimedia representations,\" Multimedia Tools and Applications, vol. 78, pp. 3315–3339, 2019.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[7] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Metaverse and XR for cultural heritage education: applications, standards, architecture, and technological insights,\" Virtual Reality, Springer, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[8] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Exploring the impact of virtual reality on museum experiences: visitor immersion and experience consequences,\" Virtual Reality, Springer, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[9] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"A systematic review of digital transformation technologies in museum exhibition,\" Computers in Human Behavior, Elsevier, 2024.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[10] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Visiting Heritage Sites in AR and VR,\" Heritage, vol. 6, no. 3, MDPI, 2023.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[11] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Virtual reality in heritage education for enhanced learning experience: a mini-review,\" Frontiers in Virtual Reality, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[12] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Integrating restoration and interactive exploration to enhance cultural heritage through VR storytelling,\" Scientific Reports, Nature, 2024.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[13] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"VR, AR, gamification and AI towards the next generation of systems supporting cultural heritage,\" Proc. 29th Int. ACM Conf. 3D Web Technology, 2024.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[14] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Augmented Reality in Cultural Heritage: An Overview of the Last Decade of Applications,\" Applied Sciences, vol. 12, no. 19, MDPI, 2022.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[15] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "N. Upasani et al., \"Augmented, Virtual and Mixed Reality Research in Cultural Heritage: A Bibliometric Study,\" IJACSA, vol. 14, no. 1, 2023.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[16] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "S. Jangra et al., \"Impact of VR on Cultural Heritages: Mobile VR Tour of Chandigarh Museum, India,\" CCIS, vol. 2334, Springer, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[17] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "A. Gurjar et al., \"Digital Interventions in Tourist Experiences for Heritage Sites,\" Lecture Notes in Mech. Eng. (ICoRD 2025), Springer, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[18] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Transforming Interpretation of Heritage Sites with AR and VR — Wooden Temples of Chamba, HP, India,\" ISPRS Archives, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[19] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"A Metaverse-Based Digital Preservation of Temple Architecture and Heritage,\" Scientific Reports, Nature, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[20] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Questionnaires for evaluating virtual reality: A systematic scoping review,\" J. Computing and Virtual Heritage, Elsevier, 2024.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[21] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Immersive realities in museums: evaluating VR, VR360, and MR on visitor presence, engagement and motivation,\" Virtual Reality, Springer, 2025.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[22] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Game-based assessment framework for VR, AR and digital game-based learning,\" Int. J. Educational Technology in Higher Ed., SpringerOpen, 2023.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[23] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"AR Serious Game for Children's Optical Science Education,\" JMIR Serious Games, 2024.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "[24] ",
+        "bold": true,
+        "font_size": 8.0
+      },
+      {
+        "text": "\"Gamification in Virtual Reality Museums: Effects on Hedonic and Eudaimonic Experiences,\" Multimedia Tools and Applications, Springer, 2024.",
+        "font_size": 8.0
+      }
+    ],
+    "align": null,
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": "both",
+    "fmt": {
+      "space_after": 2.5,
+      "line_spacing": 200,
+      "line_rule": "auto",
+      "indent_left": 11.3
+    }
+  }
+]

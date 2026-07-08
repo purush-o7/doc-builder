@@ -1,0 +1,466 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "V. EXPERIMENTS AND RESULTS",
+    "align": "center"
+  },
+  {
+    "type": "spacer",
+    "align": "center"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "A. Experimental Setup",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "A controlled user study was conducted to evaluate the effectiveness, usability, and overall user experience of KovilAR. A total of 49 participants (27 males, 13 females, 9 undisclosed) were recruited from Amrita Vishwa Vidyapeetham, comprising undergraduate and postgraduate students as well as faculty members with varying levels of prior experience with VR/AR technologies. The sample size aligns with recommendations for usability evaluations of XR systems [20].",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Each participant followed a standardized evaluation protocol consisting of three stages: (1) a pre-session briefing on HoloLens 2 controls and interaction gestures (approximately 5 minutes), (2) independent exploration of the complete four-phase KovilAR experience (15–20 minutes), and (3) completion of a post-session questionnaire. The questionnaire employed a 5-point Likert scale (1 = Strongly Negative to 5 = Strongly Positive) across seven evaluation dimensions: Interface Usability, Immersion Level, Visual Appeal, Interest & Understanding, Recommendation Intent, Architecture Learning, and Revisit Intention. Additionally, three open-ended questions captured qualitative feedback on suggested improvements, technical issues encountered, and general comments.",
+    "align": "both"
+  },
+  {
+    "type": "spacer",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "B. Instrument Reliability",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "To assess the internal consistency of the evaluation instrument, Cronbach’s alpha was computed across all seven Likert-scale items. The resulting coefficient of α = 0.815 indicates good internal consistency [20], confirming that the questionnaire items collectively measure a coherent underlying construct of user experience quality. All corrected item-total correlations fell within the acceptable range (r = 0.478–0.671, all "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " < 0.001), indicating that every item contributes meaningfully to the overall evaluation and none should be excluded."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "spacer",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "C. Quantitative Results",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Table VI presents the descriptive statistics for all seven evaluation metrics. The application received an overall mean satisfaction score of 4.53 out of 5.00 across all dimensions, with 94.8% of all responses being positive (score ≥ 4). Notably, no participant assigned a score of 1 or 2 on any metric, indicating universally favorable reception.",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "table",
+    "caption": "TABLE VI: User Experience Evaluation Results",
+    "headers": [
+      "Metric",
+      "Mean",
+      "SD",
+      "Median",
+      "Positive %"
+    ],
+    "rows": [
+      [
+        "Interface Usability",
+        "4.18",
+        "0.60",
+        "4",
+        "89.8%"
+      ],
+      [
+        "Immersion Level",
+        "4.43",
+        "0.61",
+        "4",
+        "93.9%"
+      ],
+      [
+        "Visual Appeal",
+        "4.61",
+        "0.53",
+        "5",
+        "98.0%"
+      ],
+      [
+        "Interest & Understanding",
+        "4.43",
+        "0.71",
+        "5",
+        "87.8%"
+      ],
+      [
+        "Recommendation Intent",
+        "4.67",
+        "0.52",
+        "5",
+        "98.0%"
+      ],
+      [
+        "Architecture Learning",
+        "4.59",
+        "0.57",
+        "5",
+        "95.9%"
+      ],
+      [
+        "Revisit Intention",
+        "4.82",
+        "0.39",
+        "5",
+        "100%"
+      ],
+      [
+        "Overall",
+        "4.53",
+        "—",
+        "—",
+        "94.8%"
+      ]
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Revisit Intention received the highest mean score (M = 4.82, SD = 0.39) with a unanimous 100% positive response rate—the only metric achieving this distinction. Recommendation Intent (M = 4.67) and Visual Appeal (M = 4.61) followed closely, both with 98.0% positive responses. Interface Usability scored lowest (M = 4.18, SD = 0.60) with 89.8% positive responses, attributable to the initial gesture learning curve inherent to the HoloLens 2 platform. Fig. 11._visualizes the mean scores with standard deviation error bars across all seven metrics, clearly illustrating the consistently high ratings (all above 4.0) while highlighting the relative dip in Interface Usability compared to the content-oriented dimensions.",
+    "align": "both"
+  },
+  {
+    "type": "figure",
+    "path": "media/rId17.png",
+    "width": 3.4,
+    "align": "center"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 11. ",
+        "bold": true
+      },
+      {
+        "text": "Mean UX scores (±SD) across seven metrics; all exceed the positive threshold (≥4), led by Revisit Intention (4.82) with Interface Usability lowest (4.18).",
+        "font_name": "Gungsuh"
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Table VII details the complete response distribution across all rating levels. The data reveals a strong positive skew, with the majority of responses concentrated at scores of 4 and 5. For Revisit Intention, 81.6% of participants selected the highest possible score (5), while only 18.4% selected 4. In contrast, Interface Usability showed the most distributed pattern, with 28.6% rating 5, 61.2% rating 4, and 10.2% rating 3. This distribution is visualized in Fig. 11, which presents a stacked horizontal bar chart showing the proportion of each rating level per metric. The complete absence of scores 1 and 2 across all metrics, and the dominance of dark green (score 5) in the upper metrics, underscore the overwhelmingly positive reception of the application.",
+    "align": "both"
+  },
+  {
+    "type": "figure",
+    "path": "media/rId18.png",
+    "width": 3.4,
+    "align": "center"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 12. ",
+        "bold": true
+      },
+      {
+        "text": "Response distribution across seven metrics; scores 4–5 dominate all categories with no negative responses."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "content",
+    "style": "table",
+    "caption": "TABLE VII: Response Distribution by Rating Level",
+    "headers": [
+      "Metric",
+      "5",
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "rows": [
+      [
+        "Interface Usability",
+        "14",
+        "30",
+        "5",
+        "0",
+        "0"
+      ],
+      [
+        "Immersion Level",
+        "24",
+        "22",
+        "3",
+        "0",
+        "0"
+      ],
+      [
+        "Visual Appeal",
+        "31",
+        "17",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "Interest & Understanding",
+        "27",
+        "16",
+        "6",
+        "0",
+        "0"
+      ],
+      [
+        "Recommendation Intent",
+        "34",
+        "14",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "Architecture Learning",
+        "31",
+        "16",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "Revisit Intention",
+        "40",
+        "9",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "D. Statistical Analysis",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Given the ordinal nature of Likert-scale data, non-parametric statistical tests were employed throughout the analysis. A Friedman test was conducted to examine whether significant differences exist across the seven evaluation metrics, treating each participant’s responses as repeated measures. The test revealed a statistically significant difference across metrics (χ²(6) = 53.94, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " < 0.001), indicating that participants did not rate all dimensions of the experience equally."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Post-hoc pairwise comparisons using Wilcoxon signed-rank tests with Bonferroni correction identified six statistically significant pairs. Interface Usability was rated significantly lower than Revisit Intention (W = 15.0, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": "adj < 0.001), Recommendation Intent (W = 40.5, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": "adj < 0.001), Visual Appeal (W = 52.0, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": "adj = 0.006), and Architecture Learning (W = 34.5, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": "adj = 0.006). Interest & Understanding and Immersion Level were also rated significantly lower than Revisit Intention ("
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": "adj = 0.004 and 0.006, respectively). No significant differences were found among the top-performing metrics (Visual Appeal, Recommendation Intent, Architecture Learning, and Revisit Intention), suggesting a consistently high evaluation ceiling."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "spacer",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "table",
+    "caption": "TABLE VIII: Summary of Statistical Tests",
+    "headers": [
+      "Test",
+      "Statistic",
+      "p-value",
+      "Interpretation"
+    ],
+    "rows": [
+      [
+        "Cronbach’s α",
+        "0.815",
+        "—",
+        "Good internal consistency"
+      ],
+      [
+        "Friedman",
+        "χ² = 53.94",
+        "< 0.001",
+        "Significant metric differences"
+      ],
+      [
+        "",
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "E. Inter-Metric Correlations",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Spearman rank-order correlations were computed between all pairs of evaluation metrics to understand how different aspects of the user experience relate to one another. The analysis revealed that Immersion Level was positively correlated with Interest & Understanding (ρ = 0.46, "
+      },
+      {
+        "text": "p",
+        "italic": true
+      },
+      {
+        "text": " < 0.01), supporting the hypothesis that greater perceived immersion facilitates deeper engagement with the educational content. Similarly, Recommendation Intent showed moderate correlations with both Visual Appeal (ρ = 0.52) and Interest & Understanding (ρ = 0.60), suggesting that users who found the visual reconstruction compelling and the content engaging were most inclined to recommend the application. The strongest observed correlation was between Interest & Understanding and Recommendation Intent (ρ = 0.60), indicating that perceived learning value is the primary driver of advocacy. The complete correlation structure is presented in Fig. 11. These inter-metric relationships validate the coherence of the four-phase pedagogical design: the sequential progression from orientation through exploration to assessment appears to create a reinforcing cycle where immersion supports learning, and learning drives satisfaction."
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "figure",
+    "path": "media/rId19.png",
+    "width": 3.2,
+    "align": "center"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 13. ",
+        "bold": true
+      },
+      {
+        "text": "Spearman correlation matrix of seven UX metrics; strongest link: Interest & Understanding — Recommendation Intent (ρ = 0.60)."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "F. Qualitative Findings",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Analysis of the open-ended responses yielded several recurring themes. The most frequently cited positive aspect was the jigsaw puzzle phase, which participants described as “very interesting” and “engaging.” Multiple respondents highlighted the sense of immersion, with one participant comparing the experience to “Iron Man’s holograms.” Constructive feedback centered on three areas: (1) the need for improved onboarding—several participants suggested in-view gesture tutorials or animated guides rather than verbal briefings; (2) requests for enhanced 3D model resolution and opacity, particularly when examining components at close range; and (3) suggestions for environmental context, such as rendering surrounding terrain or sky elements to increase spatial presence. Technical issues were minimal: 71.4% of respondents who answered the glitch question reported no problems. The few issues mentioned related to object occlusion when moving too close and minor hand-tracking calibration difficulties—both known limitations of the HoloLens 2 platform [5].",
+    "align": "both"
+  },
+  {
+    "type": "spacer",
+    "align": null
+  }
+]

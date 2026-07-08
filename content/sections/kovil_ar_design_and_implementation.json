@@ -1,0 +1,406 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "III. SYSTEM DESIGN AND MOOVAR KOVIL DIGITISATION PIPELINE",
+    "align": "center",
+    "bold_italic": true
+  },
+  {
+    "type": "spacer",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The Microsoft HoloLens 2 is a standalone optical see-through head-mounted display powered by the Qualcomm Snapdragon 850 compute platform with a custom 2nd-generation Holographic Processing Unit (HPU) that offloads spatial perception tasks from the main CPU. The display delivers 2048 × 1080 pixels per eye across a 52° diagonal field of view. Critically for KovilAR, the device features fully articulated hand tracking with 25 joints per hand at 30 Hz, eliminating the need for handheld controllers and enabling natural pinch, grab, and rotation gestures essential for manipulating holographic temple models. Eye tracking via built-in IR cameras provides gaze-based pointing and is used to trigger contextual tooltips during the component exploration phase.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The software stack comprises four layers. At the base, "
+      },
+      {
+        "text": "Unity 2020.3 LTS",
+        "bold": true
+      },
+      {
+        "text": " provides the scene graph, physics engine, audio engine, and rendering pipeline. Above it, the "
+      },
+      {
+        "text": "Mixed Reality Toolkit (MRTK) 2.8.3",
+        "bold": true
+      },
+      {
+        "text": "—a Microsoft-driven open-source project—supplies cross-platform input management, UX building blocks (Slate, Object Manipulator, Bounds Control, Solvers, Bezier ToolTips), spatial awareness meshing, and the MRTK Standard Shader that supports Fluent Design elements with performance optimised for mobile XR hardware [5]. MRTK communicates with the hardware through the "
+      },
+      {
+        "text": "OpenXR 1.1",
+        "bold": true
+      },
+      {
+        "text": " runtime, which abstracts device-specific capabilities (spatial anchoring, hand joint data, spatial mapping, device pose prediction, holographic rendering) behind a unified API maintained by the Khronos Group. The complete architecture stack is: KovilAR Application → MRTK 2.8.3 → XR Interaction Toolkit (XRI) → OpenXR 1.1 Runtime → Unity 2020.3 LTS → HoloLens 2 / Windows 10.",
+        "font_name": "Cardo"
+      }
+    ],
+    "align": "both"
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "A. Moovar Kovil - Architectural Elements",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Moovar Kovil was selected as the case study for several reasons. Its status as one of the earliest surviving Chola stone temples places it at a critical juncture in the evolution of Dravidian temple design. The partially ruined state of the complex—with only two of the original three shrines surviving—makes it ideal for digital reconstruction, as MR allows learners to visualise the structure in its intended complete form. The temple’s rich sculptural program (Kalarimurti, Ardhanareeswarar) and elaborate structural vocabulary following Shilpa Shastra principles offer abundant material for interactive educational content. Fig. 2 shows the bottom-tier elements—the Adhisthana (moulded base platform) and Pada (structural wall)—while Fig. 2 presents the upper-tier elements including the Gopuram (entrance tower), Vimana (pyramidal sanctum spire), and associated decorative sub-elements.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "figure",
+    "path": "media/bottom_elements.png",
+    "width": 3.4,
+    "align": "center"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 2. ",
+        "bold": true
+      },
+      {
+        "text": "Bottom-tier elements of Moovar Kovil: Adhisthana (base platform) and Pada (structural wall)."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "figure",
+    "path": "media/top_elements.png",
+    "width": 3.4,
+    "align": "center"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 3. ",
+        "bold": true
+      },
+      {
+        "text": "Upper-tier elements of Moovar Kovil: Gopuram (entrance tower), Vimana (sanctum spire), Stupi, Sikhara, and Griva sub-elements."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The bottom tier visible in Fig. 2 is composed of two foundational elements shared by all Dravidian temples. The Adhisthana is the moulded plinth on which the entire superstructure rests; its stacked horizontal layers—upana, padma, jagathi, and kumuda—are ornamented with lotus-motif bands and vyala (crouching mythical beast) friezes, symbolising the temple's emergence from primordial waters and anchoring the sacred structure to the earth. Rising directly above the Adhisthana, the Pada comprises the vertical wall sections flanked by stambhas (carved pillars) that enclose the garbhagriha (inner sanctum). Together, these two elements establish the structural and symbolic threshold between the mundane ground plane and the sacred interior.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The Vimana, seen dominating Fig. 2, is the pyramidal superstructure erected directly over the garbhagriha and the defining visual feature of Dravidian temple architecture. Unlike the curvilinear tower of North Indian (Nagara) tradition, the Chola-period vimana rises in straight-sided, progressively diminishing square tiers (talas), each representing a successively higher cosmic realm. At Moovar Kovil the vimana follows the square-plan form prescribed in the Shilpa Shastra treatises, its ascending geometry embodying Mount Meru—the sacred axis linking earth to the divine—and marking the spatial centre of the entire temple complex.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Three vertically stacked elements crown the vimana and are identifiable at the apex of Fig. 2. The Griva is the transitional neck section separating the tower body from its crowning cap; it is typically embellished with directional deity niches and serves as a structural connector that narrows the profile toward the summit. Above the Griva, the Sikhara presents a dome-shaped or octagonal cap that provides visual closure to the ascending pyramid, geometrically resolving the tower's upward thrust. The topmost element, the Stupi (Stupika), is a bulbous kalasha-shaped finial derived from stupa symbolism; shaped like a sacred water vessel, it represents primordial waters and divine abundance, functioning as the final consecrated accent that designates the structure as a cosmic axis.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The development of KovilAR followed a four-stage pipeline, illustrated in Fig. 2, spanning raw asset acquisition through final deployment on the HoloLens 2 headset. This pipeline was designed to transform heterogeneous source materials—archival photographs, STL geometry files, and scholarly references on Moovar Kovil—into an interactive mixed reality application with spatial audio narrations, manipulable 3D holograms, and a gamified assessment module.",
+    "align": "both"
+  },
+  {
+    "type": "figure",
+    "path": "media/rId8.png",
+    "width": 3.474,
+    "align": "center",
+    "fmt": {
+      "space_before": 12.0,
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 4. ",
+        "bold": true
+      },
+      {
+        "text": "KovilAR four-stage development pipeline: UI asset creation (①), 3D mesh optimisation (②), Unity/MRTK integration (③), and HoloLens 2 UWP deployment (④)."
+      }
+    ],
+    "align": "center"
+  },
+  {
+    "type": "spacer",
+    "align": "both"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "B. Stage 1: Content Creation",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The 3D assets for KovilAR were reconstructed from a combination of archival site photographs, physical field measurements, and structural guidance provided by temple architecture domain experts. Photographs captured from multiple elevations and orientations of Moovar Kovil served as the primary reference for surface geometry, proportional relationships, and decorative detail. Expert consultation with faculty specialising in Dravidian temple architecture and Shilpa Shastra canon validated the dimensional accuracy and iconographic fidelity of each reconstructed element. Using these references, the temple geometry was modelled in Autodesk Maya and hierarchically segmented into 36 individual FBX meshes across three structural tiers—Bottom (2 parts: Adhisthana base), Middle (8 parts: Vimana body), and Top (20 parts: Gopuram spire, Mandapam pavilions, Nandi, Shala roofs, and Kalasha finials)—plus a secondary shrine structure (4 parts). Each mesh underwent UV unwrapping and polygon optimisation to satisfy the HoloLens 2 real-time rendering budget before export.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Concurrently, 2D interface assets were produced from the same photographic and textual references using Adobe Photoshop and Illustrator. These included the Reader Tab panels displaying architectural terminology, iconographic overlay cards for each structural element, and visual guides used within the application's guided orientation phase.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Audio narration formed a distinct content stream within this phase. A domain-expert faculty member from the Department of Cultural Studies authored dedicated narration scripts for each of the four primary architectural components: Pada, Gopuram, Adhisthanam, and Vimana. Each script was grounded in Shilpa Shastra treatises, covering the element's structural role, sculptural iconography, and construction technique within the Dravidian temple-building tradition. The scripts were recorded as individual audio clips—pada.mp3, gopuram.mp3, adhishtana.mp3, and vimana.mp3—which the application plays on component selection via the mutual-exclusion audioScript controller.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "C. Stage 2: Application Development",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "In Stage 2, all content assets were integrated within Unity 2020.3 LTS using the Mixed Reality Toolkit (MRTK 2.8.3) as the interaction framework and OpenXR 1.1 as the hardware abstraction layer to the HoloLens 2. Six custom C# scripts were developed to implement application-specific behaviour: audioScript, TriggerBase, TriggerFront, TriggerMiddle, reset, and sample. The interaction architecture is built on five MRTK and Unity components described below.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "ObjectManipulator. ",
+        "bold": true
+      },
+      {
+        "text": "The "
+      },
+      {
+        "text": "ObjectManipulator",
+        "italic": true
+      },
+      {
+        "text": " component is the primary interaction handler for all holographic temple models. It accepts input from both near interaction (direct hand pinch) and far interaction (ray-cast pointer), and is configured to support simultaneous move, rotate, and scale operations. One-handed manipulation allows single-hand grab and repositioning; two-handed manipulation enables proportional scaling through pinch-apart gestures. The "
+      },
+      {
+        "text": "NearInteractionGrabbable",
+        "italic": true
+      },
+      {
+        "text": " component is attached to every manipulable element to enable direct hand contact: without it, ObjectManipulator responds only to far ray-cast input. Together these two components form the entry point of the manipulation pipeline — the user’s hands become the primary input device for physically engaging with temple holograms."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "ConstraintManager. ",
+        "bold": true
+      },
+      {
+        "text": "Unconstrained manipulation would allow architecturally meaningless orientations — a temple flipped upside down or shrunk to a point. The "
+      },
+      {
+        "text": "ConstraintManager",
+        "italic": true
+      },
+      {
+        "text": " enforces three domain-specific rules. A "
+      },
+      {
+        "text": "RotationConstraint",
+        "italic": true
+      },
+      {
+        "text": " locks the X-axis to preserve upright orientation, restricts the Z-axis to prevent lateral rolling, and leaves the Y-axis fully free — mirroring how a visitor would walk around a physical temple. A "
+      },
+      {
+        "text": "ScaleConstraint",
+        "italic": true
+      },
+      {
+        "text": " bounds model size between 0.2× and 2.0× of the initial scale, preventing the model from becoming too small to inspect or too large for the available workspace. A "
+      },
+      {
+        "text": "MovementConstraint",
+        "italic": true
+      },
+      {
+        "text": " restricts translation to within the user’s reachable area. These constraints encode Dravidian architectural viewing conventions within the MR environment."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "BoundsControl. ",
+        "bold": true
+      },
+      {
+        "text": "The "
+      },
+      {
+        "text": "BoundsControl",
+        "italic": true
+      },
+      {
+        "text": " component provides the visual affordance layer. When a user engages a temple model, it renders a wireframe bounding box with manipulation handles at corners and edges. These handles serve a dual purpose: they signal to the user that the object is interactive (discoverability), and they provide precise control points for scaling. BoundsControl is configured in flattened mode, displaying handles only at positions relevant to the permitted manipulations and omitting affordances for locked axes, keeping the visual display uncluttered."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "BoxCollider Trigger Zones. ",
+        "bold": true
+      },
+      {
+        "text": "For the jigsaw puzzle phase, "
+      },
+      {
+        "text": "BoxCollider",
+        "italic": true
+      },
+      {
+        "text": " components configured as trigger zones extend the manipulation pipeline into spatial validation. Each trigger zone defines a target region in 3D space corresponding to the correct position of one temple section. When a user moves a piece into a trigger zone, the "
+      },
+      {
+        "text": "OnTriggerStay",
+        "italic": true
+      },
+      {
+        "text": " callback fires and initiates the alignment validation sequence — bridging the manipulation pipeline to the puzzle assessment engine. The specific validation logic is implemented in the custom TriggerBase, TriggerFront, and TriggerMiddle scripts described in Section IV."
+      }
+    ],
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "D. Stage 3: Build and Deploy",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "In Stage 3, the Unity project was compiled to a Universal Windows Platform (UWP) solution using Unity’s built-in build pipeline targeting ARM64 architecture. The resulting solution was loaded in Visual Studio 2019, built as an APPX package, and deployed to the HoloLens 2 over USB or Wi-Fi via the Windows Device Portal. This standard UWP deployment workflow ensures reproducibility and supports iterative testing cycles during development.",
+    "align": "both",
+    "fmt": {
+      "indent_first": 36.0
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  },
+  {
+    "type": "spacer",
+    "align": null
+  }
+]

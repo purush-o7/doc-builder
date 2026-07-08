@@ -1,0 +1,837 @@
+[
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "IV.  KovilAR Design",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The KovilAR application implements a structured four-phase pedagogical design following a learn-then-test approach. Users progress sequentially from guided orientation through holistic exploration and detailed inspection, culminating in a gamified spatial assessment. Each phase builds upon the preceding one, reinforcing domain knowledge through increasingly active interaction modalities."
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Fig. 3–7 illustrate the four phases as experienced through the HoloLens 2 display. The journey begins with a draggable Reader Tab that introduces architectural terminology (Fig. 3), then transitions to a fully manipulable holographic reconstruction of the temple complex (Fig. 4). Users subsequently examine individual architectural components with contextual tooltips and spatial audio narrations (Fig. 5), guided by a mutual-exclusion audio controller (Fig. 6). Finally, the application challenges users to reconstruct the temple from scattered pieces in a 3D jigsaw puzzle (Fig. 7), with a layered system architecture (Fig. 8) coordinating input, manipulation, alignment validation, and multimodal feedback across all phases."
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "A. Phase 1: Reader Tab"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The Reader Tab serves as the entry point to the KovilAR experience, introducing users to the specialized architectural vocabulary of Dravidian temple construction. Implemented using the MRTK Slate component, the Reader Tab provides a draggable in-view panel that presents terminology definitions for key structural elements: "
+      },
+      {
+        "text": "Adhisthana",
+        "italic": true
+      },
+      {
+        "text": " (the moulded base platform with lotus plinth and "
+      },
+      {
+        "text": "vyala",
+        "italic": true
+      },
+      {
+        "text": " friezes), "
+      },
+      {
+        "text": "Bhitti",
+        "italic": true
+      },
+      {
+        "text": " (the wall surface), "
+      },
+      {
+        "text": "Vimana",
+        "italic": true
+      },
+      {
+        "text": " (the pyramidal superstructure crowning the "
+      },
+      {
+        "text": "garbhagriha",
+        "italic": true
+      },
+      {
+        "text": "), and "
+      },
+      {
+        "text": "Devakoshta",
+        "italic": true
+      },
+      {
+        "text": " (wall niches housing sculptural reliefs). The panel also functions as an interactive index, enabling direct navigation to specific architectural components within the application."
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "A SolverHandler component is attached to the Reader Tab to maintain spatial coherence with the user’s viewpoint. As the user physically moves through the environment, the solver continuously repositions the panel to remain within the field of view, ensuring that reference material is always accessible without occluding the primary 3D content. This design decision addresses a common challenge in MR educational applications: balancing supplementary information access with unobstructed spatial exploration."
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 3. ",
+        "bold": true
+      },
+      {
+        "text": "Phase 1 – Reader Tab as seen through HoloLens 2. The draggable Slate panel presents Dravidian temple terminology and serves as an interactive index for navigating architectural components."
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "B. Phase 2: Temple Exploration"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "In the second phase, users explore a complete digital reconstruction of the Moovar Kovil temple complex. The 3D model comprises 36 individual FBX mesh files organized hierarchically into three structural tiers: Bottom (the Adhisthana base, 2 mesh parts), Middle (the Vimana sanctum structure, 8 mesh parts), and Top (the Gopuram spire, Mandapam pavilions, Nandi sculpture, Shala roof structures, and Kalasha finials, totalling 20 mesh parts). An additional secondary structure (Structure_02, 4 parts) represents the surviving second shrine of the Moovar Kovil complex."
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "User interaction with the temple model is managed through the MRTK ObjectManipulator component configured for both one-handed and two-handed manipulation (manipulationType: 3, supporting move, rotate, and scale operations). To prevent disorienting viewpoints that could hinder architectural comprehension, a ConstraintManager enforces axis-specific rotation constraints: the X-axis is locked to maintain the temple’s upright orientation, Z-axis rotation is restricted to prevent lateral tilting, and Y-axis rotation remains fully free, allowing users to examine the temple from all horizontal perspectives. Manipulation responsiveness is tuned with lerp interpolation times of 0.001 seconds for move, rotate, and scale operations, ensuring fluid interaction. A HandInteractionTouchable component constrains scaling between 0.2× and 2.0× of the initial model size, preventing the model from becoming too small to inspect or too large to navigate around."
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Voice narrations recorded by a domain-expert faculty member accompany each structural level, providing contextual descriptions of architectural significance, historical provenance, and the role of each tier within the Shilpa Shastra construction canon. The scene employs warm directional lighting (colour temperature RGB: 1.0, 0.957, 0.839; intensity: 1.0) at an elevation of 50° to simulate natural sunlight conditions consistent with the temple’s geographic location in Tamil Nadu."
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 4. ",
+        "bold": true
+      },
+      {
+        "text": "Phase 2 – Temple Exploration as seen through HoloLens 2. The complete Moovar Kovil reconstruction is displayed as an interactive hologram with constrained-axis manipulation, allowing users to rotate and scale the model while maintaining spatial orientation."
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "C. Phase 3: Detailed Component Exploration"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The third phase isolates individual architectural elements for focused study. Four primary components are presented separately—Pada (base), Gopuram (entrance tower), Adhisthanam (platform), and Vimana (sanctum tower)—each equipped with gaze-triggered floating tooltips implemented using the MRTK Bezier ToolTip prefab. The tooltip system renders a Bezier-curved line connector (12 waypoints) linking each component to a TextMeshPro label (font size: 41pt, centred alignment), providing non-intrusive identification without occluding the 3D geometry. Labels such as “Nandi – Lord Shiva’s Vahanam” offer both the Sanskrit term and a contextual English gloss."
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 5. ",
+        "bold": true
+      },
+      {
+        "text": "Phase 3 – Component Exploration as seen through HoloLens 2. Individual architectural elements are displayed with Bezier-curved tooltip connectors and TextMeshPro labels identifying each component."
+      }
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "As illustrated in Fig. 6, the application incorporates an audio-based educational layer governed by a mutual exclusion principle. The audioScript controller manages four AudioSource components, one per architectural element, each mapped to a dedicated narration clip recorded by a faculty member: "
+      },
+      {
+        "text": "pada.mp3",
+        "italic": true
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "gopuram.mp3",
+        "italic": true
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "adhishtana.mp3",
+        "italic": true
+      },
+      {
+        "text": ", and "
+      },
+      {
+        "text": "vimana.mp3",
+        "italic": true
+      },
+      {
+        "text": ". When a user selects a component, the system invokes "
+      },
+      {
+        "text": "stopAllAudio()",
+        "italic": true
+      },
+      {
+        "text": " to halt any active narration before assigning and playing the target clip. This pre-emptive stop enforces a single-channel audio policy, ensuring that only one educational narration is delivered at a time. The design follows multimedia learning principles—coordinating visual inspection with a single auditory channel—to manage cognitive load and improve retention compared to simultaneous multi-stream presentation."
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 6. ",
+        "bold": true
+      },
+      {
+        "text": "Audio narration flow diagram. The mutual-exclusion controller halts any active audio before playing the selected component’s dedicated narration clip, enforcing a single-channel policy."
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "D. Phase 4: Jigsaw Puzzle Assessment",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The final phase transforms learning into active assessment through a 3D spatial jigsaw puzzle that tests the user’s understanding of how the temple’s architectural components relate to one another. The puzzle addresses the fundamental 6-DOF (six degrees of freedom) challenge of aligning rigid bodies in augmented reality: each temple section must be translated and rotated into its correct spatial position relative to the others. Upon scene initialization, the three temple sections (Bottom, Front, and Top) are automatically scattered from their assembled configuration into dispersed starting positions, and a default material is applied to signal the unassembled state.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 7. ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Phase 4 – Jigsaw Puzzle as seen through HoloLens 2. Temple sections are scattered in 3D space; users manipulate pieces via pinch gestures to reconstruct the temple. Upon successful assembly, the golden shader is applied and the ShivLingam is revealed.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The alignment validation follows a ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Manipulate–Validate–Snap",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " loop. When a user moves a piece into a designated trigger zone, the system executes a multi-stage validation pipeline. First, the piece undergoes ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "coordinate space normalization",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ": its transform is temporarily re-parented to the trigger zone’s local frame, collapsing global world coordinates into a relative system that isolates the alignment check from the scene’s transform hierarchy. The piece’s relative position ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "p",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " is then compared against the cached reference offset ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "p",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "₀ using an axis-aligned bounding box (AABB) threshold check:",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "    |p",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "i",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " − p",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "₀i",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "| ≤ ε",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "i",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "  for each axis ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "i ∈ {x, y, z}",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "where ε = (0.1, 0.1, 0.1) defines the per-axis tolerance vector. This AABB formulation is preferred over Euclidean distance as it avoids square root computation, reducing per-frame cost during the continuous ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "OnTriggerStay",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " evaluation cycle. Prior to the position check, a ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "scale validation",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " step rejects pieces whose local scale deviates by more than 0.5 units on any axis from the trigger’s scale, preventing geometrically incompatible placements.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Upon passing validation, the piece is snapped to its target position and undergoes ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "rotational correction via inverse quaternion multiplication",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ". Each trigger zone defines a target orientation as a quaternion ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "q",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "t, and the corrected orientation is computed as ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "q",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "c = ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "q",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "t⁻¹, which is applied directly to the piece’s local rotation. Table IV summarises the spatial transforms per trigger zone.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "table",
+    "caption": "TABLE IV: Trigger Zone Spatial Transforms",
+    "headers": [
+      "Trigger",
+      "Position Offset",
+      "Rotation Offset",
+      "Inverse Applied"
+    ],
+    "rows": [
+      [
+        "Base",
+        "(0.0, −0.7, 0.0)",
+        "(0°, 0°, 0°)",
+        "Identity"
+      ],
+      [
+        "Front",
+        "(−1.474, 0.0, 0.0)",
+        "(0°, 0°, −90°)",
+        "(0°, 0°, 90°)"
+      ],
+      [
+        "Middle",
+        "(0.0, 0.689, 0.96)",
+        "(180°, 180°, 180°)",
+        "Inverse of full flip"
+      ]
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The system’s completion logic operates as a ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "distributed Boolean AND gate",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ". Each trigger zone independently maintains a binary alignment flag. A central coordinator queries all three flags on every validation cycle; the success condition is satisfied only when all three are simultaneously ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "true",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ". If any piece exits its trigger zone, its flag resets to ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "false",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", immediately breaking the conjunction. When the AND condition holds, the completion sequence activates: (1) a sacred ShivLingam object, initially hidden in the scene hierarchy, is revealed; (2) a golden material (MRTK Standard shader with hover-light responsiveness) is applied to the Renderer components of all assembled pieces, producing a visually distinct transformation; and (3) a devotional audio track plays through the spatial audio system. If any piece subsequently exits its trigger zone, the coordinator reverses the entire sequence—hiding the ShivLingam, restoring the default material, and stopping audio—ensuring that the completion reward remains contingent on maintaining correct assembly.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "E. System Architecture",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 8. ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Layered system architecture of KovilAR showing the five functional layers: User Interaction, Object Manipulation, Alignment Engine, Feedback System, and Reset System.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The proposed system follows a layered architecture (Fig. 8) comprising five functional layers. The ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "User Interaction Layer",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " leverages the Mixed Reality Toolkit (MRTK 2.8.3) to capture multimodal input through hand tracking, articulated hand mesh visualization, gaze-based pointing, spatial awareness for environment mapping, and input simulation for in-editor testing. User actions are processed by the ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Object Manipulation Layer",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", which enables natural interaction with virtual temple components through direct grab, rotate, and scale operations using MRTK’s Object Manipulator and Near Interaction Grabbable components. Bounds Control constrains object transformations within valid ranges, while the Constraint Manager enforces placement rules during manipulation.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Manipulated objects are evaluated by the ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Alignment Engine",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", which operates through three stages: the ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Piece Detector",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " identifies when a component enters a designated snap zone using collider-based proximity sensing; the ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Position Validator",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " performs scale comparison, coordinate-space re-parenting, inverse quaternion rotation correction, and AABB threshold checks to determine placement accuracy; and the ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Assembly Coordinator",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " monitors the alignment state of all pieces via the distributed Boolean AND gate, triggering a success condition only when every component passes validation.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Upon successful assembly, the ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Feedback System",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " delivers multimodal confirmation: materials are swapped from placeholder to final temple textures, the ShivLingam sacred object is revealed within the assembled structure, celebratory audio is played, and element-specific educational narrations become available for each architectural component—Pada (base), Gopuram (entrance tower), Adhisthanam (platform), and Vimana (sanctum tower).",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "F. Reset Mechanism",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "Repeatability is a critical requirement for educational applications, where multiple users or successive learning attempts must begin from a consistent initial state. KovilAR implements a two-tier reset architecture that separates scene-level state restoration from puzzle-specific state management.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "scene-level reset",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " operates over all eight major GameObjects in the environment—the main temple structure, the four primary architectural components (Gopuram, Vimana, Pada, Adhisthanam), and three supplementary sculptural elements (Nandi, Dindi, Mundi). At scene initialization, the system caches the position vector (",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "p",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " ∈ ℝ³) and orientation quaternion (",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "q",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " ∈ ℍ) for each object. A public ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "resetTheLayout()",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " method, callable from the user interface, restores all eight objects to their cached transforms, effectively rewinding the scene to its original configuration. This layer handles geometric state only and does not modify materials, audio, or alignment flags.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "puzzle-level reset",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " manages the four puzzle-specific objects and their associated application state. Unlike the scene-level reset, the puzzle reset caches transforms ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "after",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " the initial scattering phase (1 second post-initialization), meaning the cached state corresponds to the puzzle-ready scattered configuration rather than the assembled temple. When invoked, this reset performs five operations: (1) restores all four piece positions and rotations to their scattered state; (2) clears all alignment flags to ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "false",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "; (3) reverts all piece materials to the default unassembled shader; (4) deactivates the ShivLingam object; and (5) halts any active audio playback. Table V summarises the two-tier caching strategy.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "table",
+    "caption": "TABLE V: Two-Tier Reset Caching Strategy",
+    "headers": [
+      "Reset Level",
+      "Objects",
+      "Cache Timing",
+      "State Restored"
+    ],
+    "rows": [
+      [
+        "Scene-level",
+        "8 (temple + sculptures)",
+        "Frame 1 (Start)",
+        "Position, Rotation"
+      ],
+      [
+        "Puzzle-level",
+        "4 (puzzle pieces)",
+        "1 s post-Start (scattered)",
+        "Position, Rotation,Materials, Audio, Flags"
+      ]
+    ]
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "This separation allows instructors or users to reset the puzzle independently—returning pieces to their scattered positions for another assembly attempt—without disturbing the broader scene state, or to perform a full scene reset that reinitialises the entire experience. The two-tier design thus supports both iterative puzzle practice within a single session and complete state restoration between successive users.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  }
+]

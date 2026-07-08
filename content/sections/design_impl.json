@@ -1,0 +1,356 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "III. KOVIL AR DESIGN AND IMPLEMENTATION",
+    "bold_italic": true
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The Microsoft HoloLens 2 is a standalone optical see-through head-mounted display powered by the Qualcomm Snapdragon 850 compute platform with a custom 2nd-generation Holographic Processing Unit (HPU) that offloads spatial perception tasks from the main CPU. The display delivers 2048 × 1080 pixels per eye across a 52° diagonal field of view. Critically for KovilAR, the device features fully articulated hand tracking with 25 joints per hand at 30 Hz, eliminating the need for handheld controllers and enabling natural pinch, grab, and rotation gestures essential for manipulating holographic temple models. Eye tracking via built-in IR cameras provides gaze-based pointing and is used to trigger contextual tooltips during the component exploration phase."
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The software stack comprises four layers. At the base, "
+      },
+      {
+        "text": "Unity 2020.3 LTS",
+        "bold": true
+      },
+      {
+        "text": " provides the scene graph, physics engine, audio engine, and rendering pipeline. Above it, the "
+      },
+      {
+        "text": "Mixed Reality Toolkit (MRTK) 2.8.3",
+        "bold": true
+      },
+      {
+        "text": "—a Microsoft-driven open-source project—supplies cross-platform input management, UX building blocks (Slate, Object Manipulator, Bounds Control, Solvers, Bezier ToolTips), spatial awareness meshing, and the MRTK Standard Shader that supports Fluent Design elements with performance optimised for mobile XR hardware [5]. MRTK communicates with the hardware through the "
+      },
+      {
+        "text": "OpenXR 1.1",
+        "bold": true
+      },
+      {
+        "text": " runtime, which abstracts device-specific capabilities (spatial anchoring, hand joint data, spatial mapping, device pose prediction, holographic rendering) behind a unified API maintained by the Khronos Group. The complete architecture stack is: KovilAR Application → MRTK 2.8.3 → XR Interaction Toolkit (XRI) → OpenXR 1.1 Runtime → Unity 2020.3 LTS → HoloLens 2 / Windows 10."
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "A. Moovar Kovil - Architectural Elements"
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Moovar Kovil was selected as the case study for several reasons. Its status as one of the earliest surviving Chola stone temples places it at a critical juncture in the evolution of Dravidian temple design. The partially ruined state of the complex—with only two of the original three shrines surviving—makes it ideal for digital reconstruction, as MR allows learners to visualise the structure in its intended complete form. The temple’s rich sculptural program (Kalarimurti, Ardhanareeswarar) and elaborate structural vocabulary following Shilpa Shastra principles offer abundant material for interactive educational content. Table III summarises the principal architectural elements represented in KovilAR along with their Sanskrit designations and functional descriptions."
+  },
+  {
+    "type": "content",
+    "style": "table",
+    "caption": "TABLE III: Architectural Elements in KovilAR",
+    "headers": [
+      "Element",
+      "Sanskrit Term",
+      "Description"
+    ],
+    "rows": [
+      [
+        "Base platform",
+        "Adhisthana",
+        "Foundation with lotus plinth and vyala friezes"
+      ],
+      [
+        "Tower",
+        "Gopuram",
+        "Entrance tower structure"
+      ],
+      [
+        "Sanctum tower",
+        "Vimana",
+        "Pyramidal superstructure over the garbhagriha"
+      ],
+      [
+        "Base element",
+        "Pada",
+        "Foundational structural element"
+      ],
+      [
+        "Wall niches",
+        "Devakoshta",
+        "Niches with sculptural reliefs"
+      ]
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "The development of KovilAR followed a four-stage pipeline, illustrated in Fig. 1, spanning raw asset acquisition through final deployment on the HoloLens 2 headset. This pipeline was designed to transform heterogeneous source materials—archival photographs, STL geometry files, and scholarly references on Moovar Kovil—into an interactive mixed reality application with spatial audio narrations, manipulable 3D holograms, and a gamified assessment module.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "figure_caption",
+    "runs": [
+      {
+        "text": "Fig. 1. ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Development pipeline of KovilAR. Stage ① produces UI assets from raw reference materials using Adobe Photoshop and Illustrator. Stage ② converts raw 3D geometry into optimised FBX meshes using Autodesk Maya. Stage ③ integrates all assets within Unity 2020.3 LTS, leveraging MRTK and OpenXR for interaction and rendering. Stage ④ builds the Universal Windows Platform package via Visual Studio and deploys it to the HoloLens 2.",
+        "bold": true,
+        "italic": true
+      }
+    ]
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "B.  …………?........."
+  },
+  {
+    "type": "spacer"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "In ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Stage ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "1",
+        "bold": true
+      },
+      {
+        "text": " (",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "UI Creation",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ")",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", raw reference materials—including archival photographs of Moovar ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Kovil"
+      },
+      {
+        "text": ", STL scan files, and Shilpa Shastra textual references—were processed using Adobe Photoshop and Illustrator to produce 2D interface assets such as the Reader Tab panels, architectural terminology cards, and iconographic overlays. Concurrently, a domain-expert faculty member from the Department of Cultural Studies recorded dedicated audio narrations for each architectural component (Pada, Gopuram, Adhisthanam, and Vimana), providing historically grounded descriptions of structural significance, sculptural iconography, and construction techniques rooted in the Dravidian temple-building tradition.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "In ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Stage ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "2",
+        "bold": true
+      },
+      {
+        "text": " (3D Asset Creation)",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", raw geometry files of the Moovar ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Kovil"
+      },
+      {
+        "text": " temple were imported into Autodesk Maya for mesh optimisation, UV unwrapping, and hierarchical segmentation. The temple was decomposed into 36 individual FBX meshes organised across three structural tiers—Bottom (2 parts), Middle (8 parts), and Top (20 parts)—plus a secondary shrine structure (4 parts), yielding a modular asset library that supports both holistic visualisation and individual component inspection. Each mesh was exported in FBX format for compatibility with the Unity import pipeline.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "In ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Stage ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "3",
+        "bold": true
+      },
+      {
+        "text": " (Application Development)",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", all assets were integrated within Unity 2020.3 LTS. The Mixed Reality Toolkit (MRTK 2.8.3) provided the interaction framework, supplying pre-built components for hand tracking, gaze-based pointing, object manipulation, spatial awareness, near interaction, and the MRTK Standard Shader used for material rendering. MRTK’s Solver system managed UI element positioning (e.g., the Reader Tab’s follow behaviour), while the Object Manipulator and Bounds Control components enabled constrained manipulation of holographic temple models. The OpenXR runtime—a royalty-free cross-platform standard maintained by the Khronos Group—served as the hardware abstraction layer between MRTK and the HoloLens 2 device, providing standardised access to spatial anchoring, device pose tracking, hand joint data, spatial mapping, and holographic rendering. Six custom C# scripts were developed to implement the application-specific logic: ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "audioScript",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " (mutual-exclusion audio narration controller), ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "TriggerBase",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "TriggerFront",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", and ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "TriggerMiddle",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " (three-stage jigsaw alignment engine with collider-based validation), ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "reset",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " (scene-level state restoration), and ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "sample",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": " (prototype snap-to-place controller).",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "content",
+    "style": "para_rich",
+    "runs": [
+      {
+        "text": "In ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "Stage ",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": "4",
+        "bold": true
+      },
+      {
+        "text": " (Build and Deploy)",
+        "bold": true,
+        "italic": true
+      },
+      {
+        "text": ", the Unity project was compiled to a Universal Windows Platform (UWP) solution using Unity’s built-in build pipeline targeting ARM64 architecture. The resulting solution was loaded in Visual Studio 2019, built as an APPX package, and deployed to the HoloLens 2 over USB or Wi-Fi via the Windows Device Portal. This standard UWP deployment workflow ensures reproducibility and supports iterative testing cycles during development.",
+        "bold": true,
+        "italic": true
+      }
+    ],
+    "align": "justify"
+  },
+  {
+    "type": "spacer"
+  }
+]

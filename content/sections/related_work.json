@@ -1,0 +1,176 @@
+[
+  {
+    "type": "content",
+    "style": "heading",
+    "text": "II. RELATED WORK",
+    "align": "center",
+    "fmt": {
+      "space_before": 12.0,
+      "space_after": 6.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "A. Extended Reality for Cultural Heritage",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Extended reality offers immersive and engaging experiences across diverse domains including education, entertainment, healthcare, heritage preservation, and tourism [3]. Innocente et al. [2] conducted a systematic framework study analysing 65 papers on the use of immersive XR technologies in cultural heritage. Bozzelli et al. [4] developed an integrated VR/AR framework for user-centric interactive experiences with cultural artifacts. AR in cultural heritage over the last decade [14] has been motivated by enhancing learning, promoting tourism, and gamification.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "B. VR/AR in Museums and Virtual Walkthroughs",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "The deployment of VR and AR in museums has grown substantially. A systematic review of digital transformation technologies in museum exhibition [9] reveals that immersive technologies are increasingly central to modern museum design. Research on visiting heritage sites in AR and VR [10] has explored large-scale digitization to create synthetic representations. VR storytelling [12] has demonstrated how narrative experiences can engage users with historical sites. The integration of VR, AR, gamification, and AI [13] represents an emerging direction for next-generation museum systems.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "C. AR/VR for Heritage in India",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Despite India’s rich heritage, the application of immersive technologies remains relatively underexplored. A bibliometric study [15] found that research in this domain is lagging in heritage-rich countries. Jangra et al. [16] developed a mobile VR tour of the Chandigarh Museum, India. Researchers have explored AR/VR for the wooden temples of Chamba, Himachal Pradesh [18]. A metaverse-based approach to temple preservation [19] has examined temples across Asia. However, the application of MR specifically to Dravidian temple architecture of South India has not been previously explored.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "D. Mixed Reality in Architectural Visualization",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Teruggi and Fassi [5] implemented a mixed reality application for architectural documentation at the Milan Cathedral, demonstrating the HoloLens 2’s spatial mapping capabilities in vast monumental heritage environments—a finding directly relevant to our work with temple architecture.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "content",
+    "style": "subsection",
+    "text": "E. Gamification in Heritage Education",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "spacer",
+    "align": null,
+    "fmt": {
+      "space_before": 9.0,
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  },
+  {
+    "type": "content",
+    "style": "para",
+    "text": "Game mechanics such as puzzles, rewards, and progressive challenges increase motivation and knowledge retention [6]. A game-based assessment framework for VR/AR learning [22] provides structured evaluation approaches. Research on AR serious games [23] has demonstrated through RCTs that game-based AR learning significantly improves engagement. Studies on gamification in VR museums [24] have found that gamified elements enhance both enjoyment and deeper meaning-making in heritage contexts. Our work combines interactive architectural learning with gamified assessment—an approach not previously applied to Hindu temple architecture.",
+    "align": "both",
+    "fmt": {
+      "space_after": 6.0,
+      "line_rule": "auto",
+      "indent_first": 18.0
+    }
+  },
+  {
+    "type": "spacer",
+    "align": "both",
+    "fmt": {
+      "space_after": 3.0,
+      "line_rule": "auto"
+    }
+  }
+]
