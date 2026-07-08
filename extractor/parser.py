@@ -6,9 +6,11 @@ Image paragraphs are detected via w:drawing elements. Their images are
 extracted to media_dir and referenced by relative path.
 """
 
+import copy
 from pathlib import Path
 from docx import Document
 from docx.oxml.ns import qn
+from lxml import etree
 
 # Namespace URIs for drawing / image elements
 _NS_WP  = "http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
@@ -93,13 +95,21 @@ def _find_image(para_el, image_map: dict) -> dict | None:
 
     drawing = drawings[0]
 
-    # width from wp:extent/@cx (EMU → inches)
+    # width/height from wp:extent/@cx,@cy (EMU). Keep exact EMU so the rebuilt
+    # figure reproduces the original display box (incl. any manual reshaping),
+    # not just the native aspect ratio recomputed from width alone.
     extent = drawing.find(f".//{{{_NS_WP}}}extent")
-    width_in = _DEFAULT_IMAGE_WIDTH_IN
+    width_in  = _DEFAULT_IMAGE_WIDTH_IN
+    width_emu = None
+    height_emu = None
     if extent is not None:
         cx = extent.get("cx")
+        cy = extent.get("cy")
         if cx:
-            width_in = round(int(cx) / 914400, 3)
+            width_emu = int(cx)
+            width_in  = round(width_emu / 914400, 3)
+        if cy:
+            height_emu = int(cy)
 
     # rId from a:blip/@r:embed
     blip = drawing.find(f".//{{{_NS_A}}}blip")
@@ -109,7 +119,10 @@ def _find_image(para_el, image_map: dict) -> dict | None:
     if not rId or rId not in image_map:
         return None
 
-    return {"rId": rId, "path": image_map[rId], "width_in": width_in}
+    info = {"rId": rId, "path": image_map[rId], "width_in": width_in}
+    if width_emu  is not None: info["width_emu"]  = width_emu
+    if height_emu is not None: info["height_emu"] = height_emu
+    return info
 
 
 # ── paragraph parsing ─────────────────────────────────────────────────────────
@@ -217,7 +230,21 @@ def _parse_table(idx: int, node) -> dict:
                     lines.append({"text": txt, "runs": runs, "fmt": _para_fmt(cp)})
             cells.append(lines)
         rows_data.append(cells)
-    return {"idx": idx, "type": "tbl", "rows": rows_data}
+    # Capture the full table XML verbatim so the rebuild reproduces it exactly
+    # (borders, fixed width, column widths, cell fonts, tblStyle, header-repeat).
+    # The structured `rows` above are kept as human-readable reference/fallback.
+    return {"idx": idx, "type": "tbl", "rows": rows_data,
+            "raw_xml": _raw_xml_no_comments(node)}
+
+
+def _raw_xml_no_comments(node) -> str:
+    """Serialize an element to XML, stripping comment-anchor markers so the
+    rebuilt document carries no review comments (comment ranges/references)."""
+    clone = copy.deepcopy(node)
+    for tagname in ("w:commentRangeStart", "w:commentRangeEnd", "w:commentReference"):
+        for el in clone.findall(".//" + qn(tagname)):
+            el.getparent().remove(el)
+    return etree.tostring(clone, encoding="unicode")
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────

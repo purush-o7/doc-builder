@@ -33,9 +33,9 @@ Every run may carry explicit overrides:
 """
 
 from pathlib import Path
-from docx.shared import Pt, Inches, RGBColor
+from docx.shared import Pt, Inches, RGBColor, Emu
 from docx.oxml.ns import qn
-from docx.oxml import OxmlElement
+from docx.oxml import OxmlElement, parse_xml
 from lxml import etree
 
 from .style import merge, resolve_align, GLOBAL_DEFAULTS
@@ -180,6 +180,12 @@ class Renderer:
             caption_el = self._caption_para(item.get("caption", ""), style,
                                             cap_fmt, italic=cap_italic)
 
+        # Verbatim path: re-inject the original table XML exactly as captured
+        # (borders, fixed width, column widths, cell fonts, tblStyle, header-repeat).
+        raw_xml = item.get("raw_xml")
+        if raw_xml:
+            return [caption_el, parse_xml(raw_xml)]
+
         headers    = item["headers"]
         rows       = item["rows"]
         col_widths = item.get("col_widths") or style.get("col_widths")
@@ -241,13 +247,25 @@ class Renderer:
             p.alignment = resolve_align("align", {"align": align})
 
         img_path = (self.base_dir / item["path"]).resolve()
-        p.add_run().add_picture(str(img_path), width=Inches(width))
+        w_emu = item.get("width_emu")
+        h_emu = item.get("height_emu")
+        if w_emu and h_emu:
+            # exact original display box (both dimensions) — preserves any
+            # manual reshaping instead of recomputing height from native AR
+            p.add_run().add_picture(str(img_path), width=Emu(w_emu), height=Emu(h_emu))
+        else:
+            p.add_run().add_picture(str(img_path), width=Inches(width))
         self._apply_para_fmt(p, fmt)
 
         sb = item.get("section_break") if hasattr(item, "get") and isinstance(item, dict) else None
         return [self._detach(p, sb)]
 
     def _authors_table(self, item: dict, style: dict) -> list:
+        # Verbatim path: re-inject the original author-block table XML exactly.
+        raw_xml = item.get("raw_xml")
+        if raw_xml:
+            return [parse_xml(raw_xml)]
+
         authors = item["authors"]
         ncols   = 2
         nrows   = max(1, (len(authors) + 1) // 2)

@@ -121,10 +121,11 @@ def _first_run_text(el: dict) -> str:
 
 
 def _classify_para(p: dict, spec_dir: Path = None, cfg: _Config = None) -> dict:
-    runs  = p["runs"]
-    full  = p["full"].strip()
-    fmt   = p["fmt"]
-    align = fmt.get("align")
+    runs     = p["runs"]
+    full_raw = p["full"]          # preserve leading/trailing whitespace verbatim
+    full     = full_raw.strip()   # stripped copy used only for detection logic
+    fmt      = p["fmt"]
+    align    = fmt.get("align")
 
     # ── image paragraph ───────────────────────────────────────────────────────
     if p.get("image"):
@@ -138,6 +139,9 @@ def _classify_para(p: dict, spec_dir: Path = None, cfg: _Config = None) -> dict:
                 pass   # keep absolute if can't relativise
         el = {"type": "figure", "path": path,
               "width": img["width_in"], "align": align}
+        # exact display box in EMU (preserves any manual reshaping)
+        if img.get("width_emu")  is not None: el["width_emu"]  = img["width_emu"]
+        if img.get("height_emu") is not None: el["height_emu"] = img["height_emu"]
         return _with_fmt(el, fmt)
 
     # ── empty paragraph → spacer (preserve all formatting) ───────────────────
@@ -161,20 +165,20 @@ def _classify_para(p: dict, spec_dir: Path = None, cfg: _Config = None) -> dict:
         if b and (align == "center" or
                   (align is None and cfg.heading_re.match(full.strip()))):
             el = {"type": "content", "style": "heading",
-                  "text": full, "align": align}
+                  "text": full_raw, "align": align}
             if i:  el["bold_italic"] = True
             if fs: el["font_size"]   = fs
             return _with_fmt(el, fmt)
 
         if i and not b:
             el = {"type": "content", "style": "subsection",
-                  "text": full, "align": align}
+                  "text": full_raw, "align": align}
             if fs: el["font_size"] = fs
             return _with_fmt(el, fmt)
 
         if not b and not i:
             el = {"type": "content", "style": "para",
-                  "text": full, "align": align}
+                  "text": full_raw, "align": align}
             if fs: el["font_size"] = fs
             return _with_fmt(el, fmt)
 
@@ -193,7 +197,7 @@ def _classify_para(p: dict, spec_dir: Path = None, cfg: _Config = None) -> dict:
         all_bold = all(r.get("bold") for r in runs)
         if all_bold and not any(r.get("italic") for r in runs):
             return _with_fmt({"type": "content", "style": "heading",
-                              "text": full, "align": align}, fmt)
+                              "text": full_raw, "align": align}, fmt)
         return _with_fmt({"type": "content", "style": "para_rich",
                           "runs": [_clean_run(r) for r in runs],
                           "align": align}, fmt)
@@ -232,7 +236,10 @@ def _authors_table(item: dict) -> dict:
                     "lines": [l["text"] for l in cell_lines],
                     "runs":  [l["runs"] for l in cell_lines],
                 })
-    return {"type": "authors_table", "authors": authors}
+    el = {"type": "authors_table", "authors": authors}
+    if item.get("raw_xml"):
+        el["raw_xml"] = item["raw_xml"]
+    return el
 
 
 def _table(item: dict, caption) -> dict:
@@ -255,6 +262,7 @@ def _table(item: dict, caption) -> dict:
     if cap_runs:   el["caption_runs"]   = cap_runs
     if cap_fmt:    el["caption_fmt"]    = cap_fmt
     if cap_italic: el["caption_italic"] = True
+    if item.get("raw_xml"): el["raw_xml"] = item["raw_xml"]
     return el
 
 
